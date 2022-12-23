@@ -5,16 +5,26 @@ $flists = ['db', 'table', 'procedures', 'traits'];
 
 // Include all extended classes files
 foreach ($flists as $li){
-    include_once($li.'.php');
+	include_once($li.'.php');
 }
 
 class Main{
 
-    protected $con;
+	use DB;
+	use Table;
 
-    function __construct(){
-        
-    }
+	protected $con;
+
+	function __construct(){
+
+		$this->makeCon();
+		$this->makeTables();
+		
+	}
+
+	function executeQuery($sql){
+		return mysqli_query($this->con, $sql);
+	}
 }
 
 ?>

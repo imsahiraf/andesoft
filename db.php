@@ -1,32 +1,32 @@
 <?php
 
-// Extended class DB
-class DB extends Main{
+// Extended class Main
+trait DB {
 
-    protected $con;
+	function makeCon() {
 
-    function __contruct() {
-
-        $servername = "localhost";
+		$servername = "localhost";
 		$username = "root";
-		$password = "";
+		$password = "mysql";
 
-        try{
+		try{
 			$this->con = mysqli_connect($servername, $username, $password);
 		}catch(exception $e){
 			die("Connection failed: " . $e->getMessage());
 		}
 
-        $this->connectDB();
-    }
+		$this->connectDB();
+	}
 
-    function connectDB(){
+	function connectDB(){
 
-        $db = 'andesoft';
+		$db = 'andesoft';
 		$queryDB = 'CREATE DATABASE IF NOT EXISTS '.$db;
 		mysqli_query($this->con, $queryDB);
 		mysqli_select_db($this->con, $db) or die(mysql_error("database")); 
 
-    }
+	}
+
 }
+
 ?>

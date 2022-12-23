@@ -25,6 +25,16 @@ class Main{
 	function executeQuery($sql){
 		return mysqli_query($this->con, $sql);
 	}
+
+	function run_function($func){
+
+		include_once($func.'.php');
+		$func::$func();
+		$func::$func.'_api'();
+		$func::$func.'_theme'();
+
+	}
+
 }
 
 ?>

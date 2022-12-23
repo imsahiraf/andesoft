@@ -7,7 +7,7 @@ trait DB {
 
 		$servername = "localhost";
 		$username = "root";
-		$password = "mysql";
+		$password = "";
 
 		try{
 			$this->con = mysqli_connect($servername, $username, $password);

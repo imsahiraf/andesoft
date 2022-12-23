@@ -1,5 +1,7 @@
 <?php
 
+global $globals;
+
 // Include class file 
 include_once('class.php');
 
@@ -12,11 +14,14 @@ include_once('header.php');
 // Now we have to include our acts file 
 $action = isset($_REQUEST['act']) ? $_REQUEST['act'] : '';
 
+// Now check if any Api call
+$globals['api'] = isset($_REQUEST['api']) ? $_REQUEST['api'] : '';
+
 // Call the page and function for the same act
 if(!empty($action)){
 	$main->run_function($action);
 }else{
-	$mail->run_function('index');
+	$main->run_function('show');
 }
 
 //Include footer

@@ -11,7 +11,8 @@ foreach ($flists as $li){
 class Main{
 
 	use DB;
-	use Table;
+	use DBTable;
+	use Procedure;
 
 	protected $con;
 
@@ -19,6 +20,7 @@ class Main{
 
 		$this->makeCon();
 		$this->makeTables();
+		$this->makeProcedures();
 		
 	}
 
@@ -28,13 +30,20 @@ class Main{
 
 	function run_function($func){
 
+		global $globals;
+
 		include_once($func.'.php');
 		$func::$func();
-		$func::$func.'_api'();
-		$func::$func.'_theme'();
-
+		if(!empty($globals['api'])){
+			$api_func = $func.'_api';
+			$func::$api_func();
+		}else{
+			$theme_func = $func.'_theme';
+			$func::$theme_func();
+		}
+		
 	}
 
 }
-
+// "CALL insertuser('$name','$email','$contact','$addrss')"
 ?>

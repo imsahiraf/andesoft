@@ -1,7 +1,7 @@
 <?php
 
 // Extended class Main
-trait Table {
+trait DBTable {
 
 	function makeTables() {
 

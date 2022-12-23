@@ -36,7 +36,8 @@ class Main{
 		$func::$func();
 		if(!empty($globals['api'])){
 			$api_func = $func.'_api';
-			$func::$api_func();
+			$ret = $func::$api_func();
+			echo json_encode($ret);
 		}else{
 			$theme_func = $func.'_theme';
 			$func::$theme_func();

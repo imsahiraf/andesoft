@@ -1,11 +1,11 @@
 <?php
 
-class show extends Main {
+class category extends Main {
 
-    public static function show(){
-        global $globals, $main;
+	public static function category(){
+		global $globals, $main;
 
-        if(__req('delete')){
+		if(__req('delete')){
 
 			$globals['cat_id'] = __req('id');
 			$sql = 'CALL delete_cat('.$globals['cat_id'].')';
@@ -41,15 +41,16 @@ class show extends Main {
 			}
 		}
 		$globals['cat_list'] = $ret;
-    }
 
-    public static function show_theme(){
-        global $globals;
+	}
+
+	public static function category_theme(){
+		global $globals;
 		__header();
 		echo '
 		<div class="container">
 			<div class="fluid pt-4 pb-4">
-				<a href="?act=category"><button class="btn btn-primary">Category</button></a>
+				<a href="?act=show"><button class="btn btn-primary">Products</button></a>
 			</div>
 			<div class="fluid pt-4 pb-4">
 				<form method="POST" action="?act=category" id="cat_form">
@@ -122,12 +123,13 @@ class show extends Main {
 		</script>
 		';
 		__footer();
-    }
 
-    public static function show_api(){
-        global $globals;
+	}
+
+	public static function category_api(){
+		global $globals;
 		return $globals['msg'];
-    }
+	}
 }
 
 ?>

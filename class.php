@@ -1,7 +1,7 @@
 <?php
 
 // Have a list of files to extend classes and traits
-$flists = ['db', 'table', 'procedures', 'traits'];
+$flists = ['db', 'table', 'procedures', 'traits', 'helper'];
 
 // Include all extended classes files
 foreach ($flists as $li){

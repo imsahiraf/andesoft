@@ -1,6 +1,8 @@
 <?php
 
-global $globals;
+global $globals, $main;
+
+error_reporting(0);
 
 // Include class file 
 include_once('class.php');
@@ -10,6 +12,9 @@ $main = new Main();
 
 //Include header
 include_once('header.php');
+
+//Include footer
+include_once('footer.php');
 
 // Now we have to include our acts file 
 $action = isset($_REQUEST['act']) ? $_REQUEST['act'] : '';
@@ -23,8 +28,5 @@ if(!empty($action)){
 }else{
 	$main->run_function('show');
 }
-
-//Include footer
-include_once('footer.php');
 
 ?>

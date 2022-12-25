@@ -61,7 +61,7 @@ class category extends Main {
 					echo '
 					<div class="form-group pb-2">
 						<label for="InputCatname">Category Name</label>
-						<input type="text" class="form-control" name="cat_name" value="'.(!empty($globals['catname']) ? $globals['catname'] : '').'" id="InputCatname" placeholder="Enter category name">
+						<input type="text" class="form-control" name="cat_name" value="'.(!empty($globals['var']['catname']) ? $globals['var']['catname'] : '').'" id="InputCatname" placeholder="Enter category name">
 					</div>
 					<div class="form-group pb-2">
 						<label for="InputPcat">Select Parent Category</label>

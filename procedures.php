@@ -30,6 +30,18 @@ trait Procedure {
 		delete from category where id = cat_id';
 		$this->executeQuery($sql);
 
+		$sql = 'CREATE PROCEDURE delete_products (
+			IN pro_id INT(10)
+		)
+		delete from products where id = pro_id';
+		$this->executeQuery($sql);
+
+		$sql = 'CREATE PROCEDURE filterBy (
+			IN `where` VARCHAR(255)
+		)
+		select * from products where `where`';
+		$this->executeQuery($sql);
+
 	}
 }
 

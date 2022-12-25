@@ -36,12 +36,6 @@ trait Procedure {
 		delete from products where id = pro_id';
 		$this->executeQuery($sql);
 
-		$sql = 'CREATE PROCEDURE filterBy (
-			IN `where` VARCHAR(255)
-		)
-		select * from products where `where`';
-		$this->executeQuery($sql);
-
 	}
 }
 

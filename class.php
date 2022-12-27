@@ -33,7 +33,9 @@ class Main{
 		global $globals;
 
 		include_once($func.'.php');
-		$func::$func();
+		$init = $func.'_init';
+		$func::$init();
+		// $func::$func._init();
 		if(!empty($globals['api'])){
 			$api_func = $func.'_api';
 			$ret = $func::$api_func();

@@ -2,7 +2,7 @@
 
 class category extends Main {
 
-	public static function category(){
+	public static function category_init(){
 		global $globals, $main;
 
 		if(__req('delete')){

